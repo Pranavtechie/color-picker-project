@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* the following styles are applied to make the input[type='color'] looks like a div */
+.color {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+}
+.color::-webkit-color-swatch {
+	border-radius: 15px;
+	border: none;
+}
+.color::-moz-color-swatch {
+	border-radius: 15px;
+	border: none;
+}
