@@ -1,7 +1,10 @@
+import { v4 as uuidv4 } from "uuid";
+
 export function generateRandomColors(count) {
 	const array = [];
 	let subString = "";
 	let hexVal = "";
+	let simpleObj = {};
 	for (let i = 0; i < count; i++) {
 		subString = "#";
 		for (let j = 0; j < 3; j++) {
@@ -13,7 +16,11 @@ export function generateRandomColors(count) {
 			// here the bug is that if the decimal number from the random lies between 0 - 15 only a single hexadecimal character is generated which makes the color code generated to only 5 letters instead of 6, so we'll be adding `0` in front when a single hexadecimal character is generated
 			subString += hexVal.length == 2 ? hexVal : "0" + hexVal;
 		}
-		array.push(subString);
+		simpleObj = {
+			id: uuidv4(),
+			color: subString,
+		};
+		array.push(simpleObj);
 	}
 
 	return array;
